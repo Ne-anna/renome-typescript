@@ -1,4 +1,5 @@
 import React from "react";
+import About from "./about";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <header>
         <p>i need coffee</p>
       </header>
+      <main></main>
     </div>
   );
 }
