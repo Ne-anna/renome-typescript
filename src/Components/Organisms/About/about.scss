@@ -1,0 +1,38 @@
+@import "../../../index.scss";
+
+.about-container {
+  display: flex;
+  padding: 0 9px;
+  flex-direction: column;
+}
+
+.about {
+  padding-bottom: 50px;
+
+  &__title {
+    font-family: $axis;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 38px;
+    letter-spacing: 8px;
+    color: $coalblack;
+  }
+
+  &__subtitle {
+    font-family: $montserrat;
+    margin-top: 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: $brown;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-family: $montserrat;
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    color: $grey;
+  }
+}
