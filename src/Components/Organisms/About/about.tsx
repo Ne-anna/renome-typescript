@@ -5,8 +5,8 @@ interface AboutData {
   title: string;
   subTitle: string;
   text: string;
-  topImage: string;
-  backImage: string;
+  top: string;
+  bottom: string;
   altTagBack: string;
   altTagFront: string;
 }
@@ -16,8 +16,8 @@ const About = (props: AboutData) => {
     <div className="about-container">
       <Grid
         altTagBack={props.altTagBack}
-        topImage={props.topImage}
-        backImage={props.backImage}
+        top={props.top}
+        bottom={props.bottom}
         altTagFront={props.altTagFront}
       />
       <div className="about">
