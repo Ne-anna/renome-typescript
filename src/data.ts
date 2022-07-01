@@ -97,7 +97,7 @@ export interface RootObject {
   footer: Footer;
 }
 
-export const defaultData = {
+export const defaultData: RootObject = {
   cart: [],
   navigation: {
     logo: "",
