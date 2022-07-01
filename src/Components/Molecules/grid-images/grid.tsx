@@ -1,23 +1,17 @@
 import "../grid-images/grid.scss";
+import { Images } from "../../../data";
 
-interface GridData {
-  topImage: string;
-  backImage: string;
-  altTagBack: string;
-  altTagFront: string;
-}
-
-const Grid = (props: GridData) => {
+const Grid = (props: Images) => {
   return (
     <div className="about__image-grid">
       <img
         className="about__back-image"
-        src={props.topImage}
+        src={props.top}
         alt={props.altTagBack}
       />
       <img
         className="about__front-image"
-        src={props.backImage}
+        src={props.bottom}
         alt={props.altTagFront}
       />
     </div>
