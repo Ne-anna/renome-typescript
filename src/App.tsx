@@ -12,11 +12,11 @@ function App() {
     return request.json();
   };
 
-  const [data, setItems] = useState(defaultData);
+  const [data, setData] = useState(defaultData);
 
   useEffect(() => {
     getData().then((response) => {
-      setItems(response);
+      setData(response);
     });
   }, []);
 
