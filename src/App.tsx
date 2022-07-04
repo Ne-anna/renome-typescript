@@ -1,4 +1,5 @@
 import About from "./Components/Organisms/About/about";
+import Gallery from "./Components/Organisms/Gallery/gallery";
 import { useEffect, useState } from "react";
 import { defaultData } from "./data";
 
@@ -11,11 +12,11 @@ function App() {
     return request.json();
   };
 
-  const [data, setItems] = useState(defaultData);
+  const [data, setData] = useState(defaultData);
 
   useEffect(() => {
     getData().then((response) => {
-      setItems(response);
+      setData(response);
     });
   }, []);
 
@@ -31,6 +32,12 @@ function App() {
           altTagBack={data.about.images.altTagBack}
           bottom={data.about.images.bottom}
           altTagFront={data.about.images.altTagBack}
+        />
+
+        <Gallery
+          title={data.gallery.title}
+          subTitle={data.gallery.subTitle}
+          galleryImages={data.gallery.galleryImages}
         />
       </main>
     </div>

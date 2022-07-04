@@ -66,7 +66,7 @@ export interface GalleryImage {
   path: string;
 }
 
-export interface Gallery {
+export interface GalleryData {
   title: string;
   subTitle: string;
   galleryImages: GalleryImage[];
@@ -93,11 +93,11 @@ export interface RootObject {
   carousel: Carousel[];
   carouselButtons: CarouselButtons;
   about: About;
-  gallery: Gallery;
+  gallery: GalleryData;
   footer: Footer;
 }
 
-export const defaultData = {
+export const defaultData: RootObject = {
   cart: [],
   navigation: {
     logo: "",
