@@ -78,7 +78,7 @@ export interface FooterIcon {
   altTag: string;
 }
 
-export interface Footer {
+export interface FooterData {
   title: string;
   footerIcons: FooterIcon[];
   logo: string;
@@ -94,7 +94,7 @@ export interface RootObject {
   carouselButtons: CarouselButtons;
   about: About;
   gallery: GalleryData;
-  footer: Footer;
+  footer: FooterData;
 }
 
 export const defaultData: RootObject = {

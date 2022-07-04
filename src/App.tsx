@@ -1,5 +1,6 @@
 import About from "./Components/Organisms/About/about";
 import Gallery from "./Components/Organisms/Gallery/gallery";
+import Footer from "./Components/Organisms/Footer/footer";
 import { useEffect, useState } from "react";
 import { defaultData } from "./data";
 
@@ -40,6 +41,14 @@ function App() {
           galleryImages={data.gallery.galleryImages}
         />
       </main>
+      <footer>
+        <Footer
+          title={data.footer.title}
+          footerIcons={data.footer.footerIcons}
+          logo={data.footer.logo}
+          copyright={data.footer.copyright}
+        />
+      </footer>
     </div>
   );
 }
