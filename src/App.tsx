@@ -1,3 +1,4 @@
+import Navigation from "./Components/Organisms/Navigation/navigation";
 import About from "./Components/Organisms/About/about";
 import Gallery from "./Components/Organisms/Gallery/gallery";
 import Footer from "./Components/Organisms/Footer/footer";
@@ -23,7 +24,16 @@ function App() {
 
   return (
     <div>
-      <header></header>
+      <header>
+        <Navigation
+          logo={data.navigation.logo}
+          cartPath={data.navigation.cartPath}
+          altTagCart={data.navigation.altTagCart}
+          count={data.navigation.count}
+          dividerPath={data.navigation.dividerPath}
+          altTagDivider={data.navigation.altTagDivider}
+        />
+      </header>
       <main>
         <About
           title={data.about.title}
