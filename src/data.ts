@@ -2,7 +2,7 @@ export interface Cart {
   item: string;
 }
 
-export interface Navigation {
+export interface NavigationData {
   logo: string;
   cartPath: string;
   altTagCart: string;
@@ -87,7 +87,7 @@ export interface FooterData {
 
 export interface RootObject {
   cart: Cart[];
-  navigation: Navigation;
+  navigation: NavigationData;
   menu: Menu[];
   backButtonTitle: BackButtonTitle;
   carousel: Carousel[];
