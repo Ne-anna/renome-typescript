@@ -4,7 +4,7 @@ import Haburger from "../../Attoms/Hamburger-button/hamburger";
 import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
 import Menu from "../../Molecules/menu/menu";
 import SubMenu from "../../Molecules/sub-menu/sub-menu";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const Navigation = (
   props: NavigationData & Cart & MenuData & backButtonData
@@ -39,6 +39,19 @@ const Navigation = (
     setSubMenuOpen(false);
     setMainMenuOpen(true);
   };
+
+  useEffect(() => {
+    const closeWithOutsideClick = (e: any) => {
+      if (!Ref.current?.contains(e.target)) {
+        setCartOpen(false);
+      }
+      if (!Ref.current?.contains(e.target)) {
+        setMainMenuOpen(false);
+        setSubMenuOpen(false);
+      }
+    };
+    document.body.addEventListener("mousedown", closeWithOutsideClick);
+  }, [Ref]);
 
   if (isMainMenuOpen || isSubMenuOpen || isCartOpen) {
     document.body.style.overflow = "hidden";
