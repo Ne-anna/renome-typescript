@@ -22,6 +22,8 @@ export interface SubMenu {
 
 export interface MenuData {
   menu: MenuItem[];
+  openSubMenu?(): void;
+  closeSubMenu?(): void;
 }
 export interface MenuItem {
   title?: string;
@@ -34,8 +36,11 @@ export interface MenuItem {
   subMenu?: SubMenu[];
 }
 
+export interface backButtonData {
+  buttonData: BackButtonTitle;
+}
 export interface BackButtonTitle {
-  title: string;
+  title?: string;
   buttonBackPath: string;
   buttonBackAltTag: string;
 }
