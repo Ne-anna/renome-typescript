@@ -20,15 +20,18 @@ export interface SubMenu {
   url: string;
 }
 
-export interface Menu {
-  title: string;
-  buttonSearchPath: string;
-  searchAltTag: string;
-  url: string;
-  buttonNextPath: string;
-  buttonNextAltTag: string;
+export interface MenuData {
+  menu: MenuItem[];
+}
+export interface MenuItem {
+  title?: string;
+  buttonSearchPath?: string;
+  searchAltTag?: string;
+  url?: string;
+  buttonNextPath?: string;
+  buttonNextAltTag?: string;
   isSubMenu?: boolean;
-  subMenu: SubMenu[];
+  subMenu?: SubMenu[];
 }
 
 export interface BackButtonTitle {
