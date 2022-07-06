@@ -1,10 +1,11 @@
 import "../Navigation/navigation.scss";
-import { NavigationData, Cart } from "../../../data";
+import { NavigationData, Cart, MenuData } from "../../../data";
 import Haburger from "../../Attoms/Hamburger-button/hamburger";
 import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
+import Menu from "../../Molecules/menu/menu";
 import { useRef, useState } from "react";
 
-const Navigation = (props: NavigationData & Cart) => {
+const Navigation = (props: NavigationData & Cart & MenuData) => {
   const [isCartOpen, setCartOpen] = useState(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState(false);
 
@@ -49,6 +50,7 @@ const Navigation = (props: NavigationData & Cart) => {
           <Haburger />
         </div>
         {isCartOpen && <CartDropDown cart={props.cart} />}
+        {isMainMenuOpen && <Menu menu={props.menu} />}
       </div>
     </nav>
   );
