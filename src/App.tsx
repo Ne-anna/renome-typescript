@@ -32,6 +32,7 @@ function App() {
           count={data.navigation.count}
           dividerPath={data.navigation.dividerPath}
           altTagDivider={data.navigation.altTagDivider}
+          cart={data.cart}
         />
       </header>
       <main>
