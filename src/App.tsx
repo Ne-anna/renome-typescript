@@ -34,6 +34,7 @@ function App() {
           altTagDivider={data.navigation.altTagDivider}
           cart={data.cart}
           menu={data.menu}
+          buttonData={data.backButtonTitle}
         />
       </header>
       <main>

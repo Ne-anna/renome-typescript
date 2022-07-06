@@ -31,14 +31,19 @@ const Menu = (props: MenuData) => {
                   />
                 </>
               ) : post.title === "Features" ? (
-                <div className="navigation__item--features">
+                <div
+                  className="navigation__item--features"
+                  onClick={props.openSubMenu}
+                >
                   <a className="navigation__link" href={post.url}>
                     {post.title}
                   </a>
-                  <FeaturesNext
-                    buttonNextPath={post.buttonNextPath}
-                    buttonNextAltTag={post.buttonNextAltTag}
-                  />
+                  <div>
+                    <FeaturesNext
+                      buttonNextPath={post.buttonNextPath}
+                      buttonNextAltTag={post.buttonNextAltTag}
+                    />
+                  </div>
                 </div>
               ) : (
                 <a className="navigation__link" href={post.url}>
