@@ -1,4 +1,8 @@
 export interface Cart {
+  cart: CartItem[];
+}
+
+export interface CartItem {
   item: string;
 }
 
@@ -85,19 +89,7 @@ export interface FooterData {
   copyright: string;
 }
 
-export interface RootObject {
-  cart: Cart[];
-  navigation: NavigationData;
-  menu: Menu[];
-  backButtonTitle: BackButtonTitle;
-  carousel: Carousel[];
-  carouselButtons: CarouselButtons;
-  about: About;
-  gallery: GalleryData;
-  footer: FooterData;
-}
-
-export const defaultData: RootObject = {
+export const defaultData = {
   cart: [],
   navigation: {
     logo: "",
