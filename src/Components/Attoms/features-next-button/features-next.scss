@@ -1,0 +1,17 @@
+@import "../../../index.scss";
+.navigation__button--features {
+  background-color: transparent;
+  border: solid 1px $lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 8px;
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
