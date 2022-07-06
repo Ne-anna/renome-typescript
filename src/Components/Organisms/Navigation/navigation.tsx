@@ -1,24 +1,30 @@
 import "../Navigation/navigation.scss";
-import { NavigationData } from "../../../data";
+import { NavigationData, Cart } from "../../../data";
 import Haburger from "../../Attoms/Hamburger-button/hamburger";
 import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
 import { useRef, useState } from "react";
 
-const Navigation = (props: NavigationData) => {
+const Navigation = (props: NavigationData & Cart) => {
   const [isCartOpen, setCartOpen] = useState(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState(false);
 
   const Ref = useRef<HTMLDivElement>(null);
 
   const toggleCart = () => {
-    console.log("this is cart");
+    setMainMenuOpen(false);
     setCartOpen(!isCartOpen);
   };
 
   const toggleMenu = () => {
-    console.log("lizzardy lizard");
     setMainMenuOpen(!isMainMenuOpen);
+    setCartOpen(false);
   };
+
+  if (isMainMenuOpen || isCartOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "unset";
+  }
 
   return (
     <nav>
@@ -42,7 +48,7 @@ const Navigation = (props: NavigationData) => {
         >
           <Haburger />
         </div>
-        {isCartOpen && <CartDropDown />}
+        {isCartOpen && <CartDropDown cart={props.cart} />}
       </div>
     </nav>
   );
