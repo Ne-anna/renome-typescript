@@ -1,6 +1,6 @@
 import "../../Attoms/Hamburger-button/hamburger.scss";
 
-const Haburger = () => {
+const Hamburger = () => {
   return (
     <div>
       <span className="navigation__hamburger-bar"></span>
@@ -10,4 +10,4 @@ const Haburger = () => {
   );
 };
 
-export default Haburger;
+export default Hamburger;

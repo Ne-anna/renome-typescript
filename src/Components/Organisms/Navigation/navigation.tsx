@@ -1,6 +1,6 @@
 import "../Navigation/navigation.scss";
 import { NavigationData, Cart, MenuData, backButtonData } from "../../../data";
-import Haburger from "../../Attoms/Hamburger-button/hamburger";
+import Hamburger from "../../Attoms/Hamburger-button/hamburger";
 import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
 import Menu from "../../Molecules/menu/menu";
 import SubMenu from "../../Molecules/sub-menu/sub-menu";
@@ -81,7 +81,7 @@ const Navigation = (
           }`}
           onClick={toggleMenu}
         >
-          <Haburger />
+          <Hamburger />
         </div>
         {isCartOpen && <CartDropDown cart={props.cart} />}
         {isMainMenuOpen && <Menu menu={props.menu} openSubMenu={openSubMenu} />}
