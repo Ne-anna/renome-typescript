@@ -9,9 +9,9 @@ import { useRef, useState, useEffect } from "react";
 const Navigation = (
   props: NavigationData & Cart & MenuData & backButtonData
 ) => {
-  const [isCartOpen, setCartOpen] = useState(false);
-  const [isMainMenuOpen, setMainMenuOpen] = useState(false);
-  const [isSubMenuOpen, setSubMenuOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState<boolean>(false);
+  const [isMainMenuOpen, setMainMenuOpen] = useState<boolean>(false);
+  const [isSubMenuOpen, setSubMenuOpen] = useState<boolean>(false);
 
   const Ref = useRef<HTMLDivElement>(null);
 
@@ -41,11 +41,11 @@ const Navigation = (
   };
 
   useEffect(() => {
-    const closeWithOutsideClick = (e: any) => {
-      if (!Ref.current?.contains(e.target)) {
+    const closeWithOutsideClick = (e: Event) => {
+      if (!Ref.current?.contains(e.target as HTMLInputElement)) {
         setCartOpen(false);
       }
-      if (!Ref.current?.contains(e.target)) {
+      if (!Ref.current?.contains(e.target as HTMLInputElement)) {
         setMainMenuOpen(false);
         setSubMenuOpen(false);
       }
