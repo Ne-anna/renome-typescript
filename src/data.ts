@@ -96,8 +96,19 @@ export interface FooterData {
   logo: string;
   copyright: string;
 }
+export interface RootObject {
+  cart: CartItem[];
+  navigation: NavigationData;
+  menu: MenuItem[];
+  backButtonTitle: BackButtonTitle;
+  carousel: Carousel[];
+  carouselButtons: CarouselButtons;
+  about: About;
+  gallery: GalleryData;
+  footer: FooterData;
+}
 
-export const defaultData = {
+export const defaultData: RootObject = {
   cart: [],
   navigation: {
     logo: "",
