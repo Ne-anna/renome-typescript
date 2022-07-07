@@ -1,4 +1,4 @@
-import "../features-next-button/features-next.scss";
+import "./features-next.scss";
 import { MenuItem } from "../../../data";
 
 const FeaturesNext = (props: MenuItem) => {

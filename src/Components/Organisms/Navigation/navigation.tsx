@@ -1,6 +1,6 @@
 import "../Navigation/navigation.scss";
 import { NavigationData, Cart, MenuData, backButtonData } from "../../../data";
-import Hamburger from "../../Attoms/Hamburger-button/hamburger";
+import Hamburger from "../../Atoms/hamburger-button/hamburger";
 import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
 import Menu from "../../Molecules/menu/menu";
 import SubMenu from "../../Molecules/sub-menu/sub-menu";

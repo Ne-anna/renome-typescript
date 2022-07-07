@@ -1,4 +1,4 @@
-import "../../Attoms/Hamburger-button/hamburger.scss";
+import "./hamburger.scss";
 
 const Hamburger = () => {
   return (

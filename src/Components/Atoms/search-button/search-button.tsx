@@ -1,5 +1,5 @@
 import { MenuItem } from "../../../data";
-import "../search-button/search-button.scss";
+import "./search-button.scss";
 
 const Search = (props: MenuItem) => {
   return (
