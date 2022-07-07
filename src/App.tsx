@@ -1,7 +1,7 @@
-import Navigation from "./Components/Organisms/Navigation/navigation";
-import About from "./Components/Organisms/About/about";
-import Gallery from "./Components/Organisms/Gallery/gallery";
-import Footer from "./Components/Organisms/Footer/footer";
+import Navigation from "./components/organisms/navigation/navigation";
+import About from "./components/organisms/about/about";
+import Gallery from "./components/organisms/gallery/gallery";
+import Footer from "./components/organisms/footer/footer";
 import { useEffect, useState } from "react";
 import { defaultData } from "./data";
 

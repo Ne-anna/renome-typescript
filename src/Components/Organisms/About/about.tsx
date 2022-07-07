@@ -1,5 +1,5 @@
-import "../About/about.scss";
-import Grid from "../../Molecules/grid-images/grid";
+import "./about.scss";
+import Grid from "../../molecules/grid-images/grid";
 
 interface AboutData {
   title: string;

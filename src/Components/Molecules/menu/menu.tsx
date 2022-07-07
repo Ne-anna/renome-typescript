@@ -1,7 +1,7 @@
-import "../menu/menu.scss";
+import "./menu.scss";
 import { MenuData } from "../../../data";
-import Search from "../../Atoms/search-button/search-button";
-import FeaturesNext from "../../Atoms/features-next-button/features-next";
+import Search from "../../atoms/search-button/search-button";
+import FeaturesNext from "../../atoms/features-next-button/features-next";
 
 const Menu = (props: MenuData) => {
   return (

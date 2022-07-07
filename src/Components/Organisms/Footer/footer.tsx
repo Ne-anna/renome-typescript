@@ -1,6 +1,6 @@
-import "../Footer/footer.scss";
+import "./footer.scss";
 import { FooterData } from "../../../data";
-import FooterIcons from "../../Molecules/footer-icons/footer-icons";
+import FooterIcons from "../../molecules/footer-icons/footer-icons";
 
 const Footer = (props: FooterData) => {
   return (

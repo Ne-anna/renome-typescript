@@ -1,6 +1,6 @@
-import "../sub-menu/sub-menu.scss";
+import "./sub-menu.scss";
 import { BackButtonTitle, MenuData } from "../../../data";
-import SubMenuBack from "../../Atoms/subMenu-back-button/submenu-back";
+import SubMenuBack from "../../atoms/submenu-back-button/submenu-back";
 
 const SubMenu = (props: MenuData & BackButtonTitle) => {
   return (

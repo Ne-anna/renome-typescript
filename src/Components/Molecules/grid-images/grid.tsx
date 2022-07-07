@@ -1,4 +1,4 @@
-import "../grid-images/grid.scss";
+import "./grid.scss";
 import { Images } from "../../../data";
 
 const Grid = (props: Images) => {

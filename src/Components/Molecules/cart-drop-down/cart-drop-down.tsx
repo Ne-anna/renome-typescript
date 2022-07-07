@@ -1,4 +1,4 @@
-import "../cart-drop-down/cart-drop-down.scss";
+import "./cart-drop-down.scss";
 import { Cart } from "../../../data";
 
 const CartDropDown = (props: Cart) => {

@@ -1,9 +1,9 @@
-import "../Navigation/navigation.scss";
+import "./navigation.scss";
 import { NavigationData, Cart, MenuData, backButtonData } from "../../../data";
-import Hamburger from "../../Atoms/hamburger-button/hamburger";
-import CartDropDown from "../../Molecules/cart-drop-down/cart-drop-down";
-import Menu from "../../Molecules/menu/menu";
-import SubMenu from "../../Molecules/sub-menu/sub-menu";
+import Hamburger from "../../atoms/hamburger-button/hamburger";
+import CartDropDown from "../../molecules/cart-drop-down/cart-drop-down";
+import Menu from "../../molecules/menu/menu";
+import SubMenu from "../../molecules/sub-menu/sub-menu";
 import { useRef, useState, useEffect } from "react";
 
 const Navigation = (
