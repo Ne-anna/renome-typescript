@@ -1,10 +1,10 @@
 import { MenuItem } from "../../../data";
 import "./search-button.scss";
 
-const Search = (props: MenuItem) => {
+const Search = ({ buttonSearchPath, searchAltTag }: MenuItem) => {
   return (
     <button className="navigation__button--search">
-      <img src={props.buttonSearchPath} alt={props.searchAltTag} />
+      <img src={buttonSearchPath} alt={searchAltTag} />
     </button>
   );
 };
