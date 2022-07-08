@@ -50,7 +50,6 @@ const Carousel = (props: CarouselProps) => {
     }
   };
 
-  console.log(slideDirection);
   return (
     <div className="carousel">
       <div className="carousel__slider">
