@@ -14,11 +14,13 @@ export interface NavigationData {
   dividerPath: string;
   altTagDivider: string;
 }
+
 export interface MenuData {
   menu: MenuItem[];
   openSubMenu?(): void;
   closeSubMenu?(): void;
 }
+
 export interface MenuItem {
   title?: string;
   buttonSearchPath?: string;
@@ -29,6 +31,7 @@ export interface MenuItem {
   isSubMenu?: boolean;
   subMenu?: SubMenu[];
 }
+
 export interface SubMenu {
   title: string;
   url: string;
@@ -37,13 +40,22 @@ export interface SubMenu {
 export interface backButtonData {
   buttonData: BackButtonTitle;
 }
+
 export interface BackButtonTitle {
   title?: string;
   buttonBackPath: string;
   buttonBackAltTag: string;
 }
 
-export interface Carousel {
+export interface CarouselData {
+  carousel: CarouselItems[];
+  slideIndex?: number;
+  slideDirection?: string;
+  prevSlide?: number;
+  blockAnimation?: boolean;
+}
+
+export interface CarouselItems {
   title: string;
   subTitle: string;
   altTag: string;
@@ -51,10 +63,12 @@ export interface Carousel {
 }
 
 export interface CarouselButtons {
-  carouselButtonNext: string;
-  altTagNext: string;
-  carouselButtonPrevious: string;
-  altTagPrevious: string;
+  carouselButtonNext?: string;
+  altTagNext?: string;
+  carouselButtonPrevious?: string;
+  altTagPrevious?: string;
+  previousSlide?(): void;
+  nextSlide?(): void;
 }
 
 export interface Images {
@@ -99,7 +113,7 @@ export interface RootObject {
   navigation: NavigationData;
   menu: MenuItem[];
   backButtonTitle: BackButtonTitle;
-  carousel: Carousel[];
+  carousel: CarouselItems[];
   carouselButtons: CarouselButtons;
   about: About;
   gallery: GalleryData;
