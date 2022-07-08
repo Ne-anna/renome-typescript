@@ -14,12 +14,6 @@ export interface NavigationData {
   dividerPath: string;
   altTagDivider: string;
 }
-
-export interface SubMenu {
-  title: string;
-  url: string;
-}
-
 export interface MenuData {
   menu: MenuItem[];
   openSubMenu?(): void;
@@ -34,6 +28,10 @@ export interface MenuItem {
   buttonNextAltTag?: string;
   isSubMenu?: boolean;
   subMenu?: SubMenu[];
+}
+export interface SubMenu {
+  title: string;
+  url: string;
 }
 
 export interface backButtonData {
