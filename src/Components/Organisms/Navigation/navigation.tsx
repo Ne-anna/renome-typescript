@@ -6,9 +6,14 @@ import Menu from "../../molecules/menu/menu";
 import SubMenu from "../../molecules/sub-menu/sub-menu";
 import { useRef, useState, useEffect } from "react";
 
-const Navigation = (
-  props: NavigationData & Cart & MenuData & backButtonData
-) => {
+interface NavigationProps {
+  navigationData: NavigationData;
+  cartData: Cart;
+  menuData: MenuData;
+  backButtonData: backButtonData;
+}
+
+const Navigation = (props: NavigationProps) => {
   const [isCartOpen, setCartOpen] = useState<boolean>(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState<boolean>(false);
   const [isSubMenuOpen, setSubMenuOpen] = useState<boolean>(false);
@@ -61,19 +66,19 @@ const Navigation = (
 
   return (
     <nav>
-      <h2 className="navigation--left">{props.logo}</h2>
+      <h2 className="navigation--left">{props.navigationData.logo}</h2>
       <div className="navigation--right" ref={Ref}>
         <img
           className="navigation__cart"
-          src={props.cartPath}
-          alt={props.altTagCart}
+          src={props.navigationData.cartPath}
+          alt={props.navigationData.altTagCart}
           onClick={toggleCart}
         />
-        <p className="navigation__count">{props.count}</p>
+        <p className="navigation__count">{props.navigationData.count}</p>
         <img
           className="navigation__divide"
-          src={props.dividerPath}
-          alt={props.altTagDivider}
+          src={props.navigationData.dividerPath}
+          alt={props.navigationData.altTagDivider}
         />
         <div
           className={`navigation__hamburger${
@@ -83,15 +88,23 @@ const Navigation = (
         >
           <Hamburger />
         </div>
-        {isCartOpen && <CartDropDown cart={props.cart} />}
-        {isMainMenuOpen && <Menu menu={props.menu} openSubMenu={openSubMenu} />}
+        {isCartOpen && <CartDropDown cart={props.cartData.cart} />}
+        {isMainMenuOpen && (
+          <Menu menu={props.menuData.menu} openSubMenu={openSubMenu} />
+        )}
         {isSubMenuOpen && (
           <SubMenu
-            menu={props.menu}
-            closeSubMenu={closeSubMenu}
-            title={props.buttonData.title}
-            buttonBackPath={props.buttonData.buttonBackPath}
-            buttonBackAltTag={props.buttonData.buttonBackAltTag}
+            backButton={{
+              buttonBackAltTag:
+                props.backButtonData.buttonData.buttonBackAltTag,
+              buttonBackPath: props.backButtonData.buttonData.buttonBackPath,
+              title: props.backButtonData.buttonData.title,
+            }}
+            menuData={{
+              menu: props.menuData.menu,
+              closeSubMenu: closeSubMenu,
+              openSubMenu: openSubMenu,
+            }}
           />
         )}
       </div>
