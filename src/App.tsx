@@ -1,4 +1,5 @@
 import Navigation from "./components/organisms/navigation/navigation";
+import Carousel from "./components/organisms/carousel/carousel";
 import About from "./components/organisms/about/about";
 import Gallery from "./components/organisms/gallery/gallery";
 import Footer from "./components/organisms/footer/footer";
@@ -46,6 +47,17 @@ function App() {
         />
       </header>
       <main>
+        <Carousel
+          carouselData={{
+            carousel: data.carousel,
+          }}
+          carouselButtonData={{
+            carouselButtonNext: data.carouselButtons.carouselButtonNext,
+            altTagNext: data.carouselButtons.altTagNext,
+            carouselButtonPrevious: data.carouselButtons.carouselButtonPrevious,
+            altTagPrevious: data.carouselButtons.altTagPrevious,
+          }}
+        />
         <About
           title={data.about.title}
           subTitle={data.about.subTitle}
