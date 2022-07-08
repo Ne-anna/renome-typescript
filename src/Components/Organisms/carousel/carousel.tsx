@@ -11,7 +11,8 @@ interface CarouselProps {
   carouselButtonData: CarouselButton;
 }
 
-enum directions {
+enum SlideDirections {
+  current = "current",
   right = "right",
   left = "left",
 }
@@ -19,14 +20,14 @@ const Carousel = (props: CarouselProps) => {
   const carousel = jsonFile.carousel;
 
   const [slideIndex, setSlideIndex] = useState<number>(1);
-  const [slideDirection, setSlideDirection] = useState<directions>(
-    directions.right
+  const [slideDirection, setSlideDirection] = useState<SlideDirections>(
+    SlideDirections.current
   );
   const [prevSlide, setPrevSlide] = useState<number>(carousel.length);
   const [blockedAnimation, setBlockedAnimation] = useState<boolean>(true);
 
   const loadNextSlide = () => {
-    setSlideDirection(directions.right);
+    setSlideDirection(SlideDirections.right);
     setBlockedAnimation(false);
     if (slideIndex !== carousel.length) {
       setSlideIndex(slideIndex + 1);
@@ -38,7 +39,7 @@ const Carousel = (props: CarouselProps) => {
   };
 
   const loadPreviousSlide = () => {
-    setSlideDirection(directions.left);
+    setSlideDirection(SlideDirections.left);
     setBlockedAnimation(false);
     if (slideIndex !== 1) {
       setSlideIndex(slideIndex - 1);
@@ -48,6 +49,8 @@ const Carousel = (props: CarouselProps) => {
       setPrevSlide(1);
     }
   };
+
+  console.log(slideDirection);
   return (
     <div className="carousel">
       <div className="carousel__slider">
