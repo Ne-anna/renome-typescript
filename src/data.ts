@@ -67,8 +67,8 @@ export interface CarouselButton {
   altTagNext?: string;
   carouselButtonPrevious?: string;
   altTagPrevious?: string;
-  previousSlide?(): void;
-  nextSlide?(): void;
+  loadPreviousSlide?(): void;
+  loadNextSlide?(): void;
 }
 
 export interface Images {

@@ -25,7 +25,7 @@ const Carousel = (props: CarouselProps) => {
   const [prevSlide, setPrevSlide] = useState<number>(carousel.length);
   const [blockedAnimation, setBlockedAnimation] = useState<boolean>(true);
 
-  const nextSlide = () => {
+  const loadNextSlide = () => {
     setSlideDirection(directions.right);
     setBlockedAnimation(false);
     if (slideIndex !== carousel.length) {
@@ -37,7 +37,7 @@ const Carousel = (props: CarouselProps) => {
     }
   };
 
-  const previousSlide = () => {
+  const loadPreviousSlide = () => {
     setSlideDirection(directions.left);
     setBlockedAnimation(false);
     if (slideIndex !== 1) {
@@ -61,14 +61,14 @@ const Carousel = (props: CarouselProps) => {
       </div>
       <div className="carousel__navigation">
         <CarouselPreviousButton
-          previousSlide={previousSlide}
+          loadPreviousSlide={loadPreviousSlide}
           carouselButtonPrevious={
             props.carouselButtonData.carouselButtonPrevious
           }
           altTagPrevious={props.carouselButtonData.altTagPrevious}
         />
         <CarouselNextButton
-          nextSlide={nextSlide}
+          loadNextSlide={loadNextSlide}
           carouselButtonNext={props.carouselButtonData.carouselButtonNext}
           altTagNext={props.carouselButtonData.altTagNext}
         />
