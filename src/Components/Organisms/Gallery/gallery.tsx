@@ -1,6 +1,6 @@
-import "../Gallery/gallery.scss";
+import "./gallery.scss";
 import { GalleryData } from "../../../data";
-import GalleryImages from "../../Molecules/gallery-images/gallery-images";
+import GalleryImages from "../../molecules/gallery-images/gallery-images";
 
 const Gallery = (props: GalleryData) => {
   return (

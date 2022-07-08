@@ -1,8 +1,12 @@
 export interface Cart {
+  cart: CartItem[];
+}
+
+export interface CartItem {
   item: string;
 }
 
-export interface Navigation {
+export interface NavigationData {
   logo: string;
   cartPath: string;
   altTagCart: string;
@@ -10,25 +14,31 @@ export interface Navigation {
   dividerPath: string;
   altTagDivider: string;
 }
-
+export interface MenuData {
+  menu: MenuItem[];
+  openSubMenu?(): void;
+  closeSubMenu?(): void;
+}
+export interface MenuItem {
+  title?: string;
+  buttonSearchPath?: string;
+  searchAltTag?: string;
+  url?: string;
+  buttonNextPath?: string;
+  buttonNextAltTag?: string;
+  isSubMenu?: boolean;
+  subMenu?: SubMenu[];
+}
 export interface SubMenu {
   title: string;
   url: string;
 }
 
-export interface Menu {
-  title: string;
-  buttonSearchPath: string;
-  searchAltTag: string;
-  url: string;
-  buttonNextPath: string;
-  buttonNextAltTag: string;
-  isSubMenu?: boolean;
-  subMenu: SubMenu[];
+export interface backButtonData {
+  buttonData: BackButtonTitle;
 }
-
 export interface BackButtonTitle {
-  title: string;
+  title?: string;
   buttonBackPath: string;
   buttonBackAltTag: string;
 }
@@ -84,11 +94,10 @@ export interface FooterData {
   logo: string;
   copyright: string;
 }
-
 export interface RootObject {
-  cart: Cart[];
-  navigation: Navigation;
-  menu: Menu[];
+  cart: CartItem[];
+  navigation: NavigationData;
+  menu: MenuItem[];
   backButtonTitle: BackButtonTitle;
   carousel: Carousel[];
   carouselButtons: CarouselButtons;

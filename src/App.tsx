@@ -1,6 +1,7 @@
-import About from "./Components/Organisms/About/about";
-import Gallery from "./Components/Organisms/Gallery/gallery";
-import Footer from "./Components/Organisms/Footer/footer";
+import Navigation from "./components/organisms/navigation/navigation";
+import About from "./components/organisms/about/about";
+import Gallery from "./components/organisms/gallery/gallery";
+import Footer from "./components/organisms/footer/footer";
 import { useEffect, useState } from "react";
 import { defaultData } from "./data";
 
@@ -23,7 +24,27 @@ function App() {
 
   return (
     <div>
-      <header></header>
+      <header>
+        <Navigation
+          navigationData={{
+            logo: data.navigation.logo,
+            cartPath: data.navigation.cartPath,
+            altTagCart: data.navigation.altTagCart,
+            count: data.navigation.count,
+            dividerPath: data.navigation.dividerPath,
+            altTagDivider: data.navigation.altTagDivider,
+          }}
+          cartData={{
+            cart: data.cart,
+          }}
+          menuData={{
+            menu: data.menu,
+          }}
+          backButtonData={{
+            buttonData: data.backButtonTitle,
+          }}
+        />
+      </header>
       <main>
         <About
           title={data.about.title}
