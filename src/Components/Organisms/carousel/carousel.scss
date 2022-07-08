@@ -1,0 +1,22 @@
+@import "../../../index.scss";
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 139vw;
+
+  &__slider {
+    margin-top: 50px;
+  }
+
+  &__navigation {
+    position: absolute;
+    display: flex;
+    gap: 15px;
+    margin-left: 22px;
+    z-index: 2;
+    bottom: 60px;
+  }
+}
