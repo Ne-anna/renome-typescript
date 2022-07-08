@@ -26,15 +26,23 @@ function App() {
     <div>
       <header>
         <Navigation
-          logo={data.navigation.logo}
-          cartPath={data.navigation.cartPath}
-          altTagCart={data.navigation.altTagCart}
-          count={data.navigation.count}
-          dividerPath={data.navigation.dividerPath}
-          altTagDivider={data.navigation.altTagDivider}
-          cart={data.cart}
-          menu={data.menu}
-          buttonData={data.backButtonTitle}
+          navigationData={{
+            logo: data.navigation.logo,
+            cartPath: data.navigation.cartPath,
+            altTagCart: data.navigation.altTagCart,
+            count: data.navigation.count,
+            dividerPath: data.navigation.dividerPath,
+            altTagDivider: data.navigation.altTagDivider,
+          }}
+          cartData={{
+            cart: data.cart,
+          }}
+          menuData={{
+            menu: data.menu,
+          }}
+          backButtonData={{
+            buttonData: data.backButtonTitle,
+          }}
         />
       </header>
       <main>
