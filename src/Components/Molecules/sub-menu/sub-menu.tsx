@@ -1,22 +1,32 @@
 import "./sub-menu.scss";
-import { BackButtonTitle, MenuData } from "../../../data";
 import SubMenuBack from "../../atoms/submenu-back-button/submenu-back";
+import { BackButtonTitle, MenuData } from "../../../data";
+interface SubMenuProps {
+  menuData: MenuData;
+  backButton: BackButtonTitle;
+}
 
-const SubMenu = (props: MenuData & BackButtonTitle) => {
+const SubMenu = (props: SubMenuProps) => {
   return (
     <div className="sub-navigation">
-      <div className="sub-navigation__item--back" onClick={props.closeSubMenu}>
+      <div
+        className="sub-navigation__item--back"
+        onClick={props.menuData.closeSubMenu}
+      >
         <div>
           <SubMenuBack
-            buttonBackPath={props.buttonBackPath}
-            buttonBackAltTag={props.buttonBackAltTag}
+            buttonBackPath={props.backButton.buttonBackPath}
+            buttonBackAltTag={props.backButton.buttonBackAltTag}
           />
         </div>
-        <p className="sub-navigation__text--back" onClick={props.closeSubMenu}>
-          {props.title}
+        <p
+          className="sub-navigation__text--back"
+          onClick={props.menuData.closeSubMenu}
+        >
+          {props.backButton.title}
         </p>
       </div>
-      {props.menu.map((post, menuIndex) => {
+      {props.menuData.menu.map((post, menuIndex) => {
         return typeof post.subMenu == "object" ? (
           <div key={menuIndex}>
             {post.subMenu.map((post, subMenuIndex) => (
