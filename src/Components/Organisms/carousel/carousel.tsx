@@ -2,13 +2,13 @@ import "../carousel/carousel.scss";
 import CarouselContent from "../../molecules/carousel-content/carousel-content";
 import CarouselPreviousButton from "../../atoms/carousel-previous-button/carousel-previous-button";
 import CarouselNextButton from "../../atoms/carousel-next-button/carousel-next-button";
-import { CarouselButtons, CarouselData } from "../../../data";
+import { CarouselButton, CarouselData } from "../../../data";
 import jsonFile from "../../../db.json";
 import { useState } from "react";
 
 interface CarouselProps {
   carouselData: CarouselData;
-  carouselButtonData: CarouselButtons;
+  carouselButtonData: CarouselButton;
 }
 
 enum directions {

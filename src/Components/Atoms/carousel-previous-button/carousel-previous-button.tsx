@@ -1,7 +1,7 @@
-import { CarouselButtons } from "../../../data";
+import { CarouselButton } from "../../../data";
 import "../carousel-next-button/carousel-next-button.scss";
 
-const CarouselPreviousButton = (props: CarouselButtons) => {
+const CarouselPreviousButton = (props: CarouselButton) => {
   return (
     <button className="carousel__button" onClick={props.previousSlide}>
       <img src={props.carouselButtonPrevious} alt={props.altTagPrevious} />

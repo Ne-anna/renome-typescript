@@ -48,21 +48,21 @@ export interface BackButtonTitle {
 }
 
 export interface CarouselData {
-  carousel: CarouselItems[];
+  carousel: CarouselItem[];
   slideIndex?: number;
   slideDirection?: string;
   prevSlide?: number;
   blockAnimation?: boolean;
 }
 
-export interface CarouselItems {
+export interface CarouselItem {
   title: string;
   subTitle: string;
   altTag: string;
   path: string;
 }
 
-export interface CarouselButtons {
+export interface CarouselButton {
   carouselButtonNext?: string;
   altTagNext?: string;
   carouselButtonPrevious?: string;
@@ -113,8 +113,8 @@ export interface RootObject {
   navigation: NavigationData;
   menu: MenuItem[];
   backButtonTitle: BackButtonTitle;
-  carousel: CarouselItems[];
-  carouselButtons: CarouselButtons;
+  carousel: CarouselItem[];
+  carouselButtons: CarouselButton;
   about: About;
   gallery: GalleryData;
   footer: FooterData;
