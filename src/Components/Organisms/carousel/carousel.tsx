@@ -13,10 +13,10 @@ interface CarouselProps {
 const Carousel = (props: CarouselProps) => {
   const carousel = jsonFile.carousel;
 
-  const [slideIndex, setSlideIndex] = useState(1);
-  const [slideDirection, setSlideDirection] = useState("right");
-  const [prevSlide, setPrevSlide] = useState(carousel.length);
-  const [blockedAnimation, setBlockedAnimation] = useState(true);
+  const [slideIndex, setSlideIndex] = useState<number>(1);
+  const [slideDirection, setSlideDirection] = useState<string>("right");
+  const [prevSlide, setPrevSlide] = useState<number>(carousel.length);
+  const [blockedAnimation, setBlockedAnimation] = useState<boolean>(true);
 
   const nextSlide = () => {
     setSlideDirection("right");
